@@ -1,24 +1,21 @@
 #include <iostream>
 #include <string>
+#include "Player.h"
 
 using namespace std;
 
-class Player
+Player::Player(string pName)
 {
+    name = pName;
+    cout << "Player created: " << name << endl;
+}
 
-public:
-    string name;
-    void speak(string speech)
-    {
-        cout << name << " says: " << endl
-             << "- \"" + speech + "\"" << endl;
-    }
-    Player(string pName)
-    {
-        name = pName;
-        cout << "Player created: " << name << endl;
-    }
-    ~Player()
-    {
-    }
-};
+Player::~Player()
+{
+}
+
+void Player::speak(string speech)
+{
+    cout << name << " says: " << endl
+         << "- \"" + speech + "\"" << endl;
+}

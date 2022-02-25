@@ -1,33 +1,27 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "../player/Player.cpp"
+#include "../player/Player.h"
+#include "Game.h"
 
 using namespace std;
 
-class Game
+Game::Game(vector<string> players)
 {
-
-public:
-    int start();
-    vector<Player> ptrPlayers;
-
-    Game(vector<string> players)
+    cout << "Starting game with players: " << players.size() << endl;
+    for (const string &pName : players)
     {
-        cout << "Starting game with players: " << players.size() << endl;
-        for (const string &pName : players)
-        {
-            Player newPlayer(pName);
-            ptrPlayers.push_back(newPlayer);
-        }
+        Player newPlayer(pName);
+        ptrPlayers.push_back(newPlayer);
     }
-    ~Game()
-    {
-        cout << "Game ended!" << endl;
-    }
-};
+}
 
-Game::start()
+Game::~Game()
+{
+    cout << "Game ended!" << endl;
+}
+
+void Game::start()
 {
     string introduce = "n";
     for (Player &player : ptrPlayers)
@@ -40,5 +34,4 @@ Game::start()
         }
     }
 
-    return 0;
 }
