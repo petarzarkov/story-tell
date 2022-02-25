@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "player/Player.h"
+#include "../player/Player.cpp"
 
 using namespace std;
 
