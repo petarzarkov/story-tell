@@ -10,7 +10,8 @@ public:
     string name;
     void speak(string speech)
     {
-        cout << name << " says: " << endl << "- \"" + speech + "\"" << endl;
+        cout << name << " says: " << endl
+             << "- \"" + speech + "\"" << endl;
     }
     Player(string pName)
     {
@@ -19,6 +20,5 @@ public:
     }
     ~Player()
     {
-        cout << "Player removed: " << name << endl;
     }
 };

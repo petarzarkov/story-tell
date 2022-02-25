@@ -1,11 +1,7 @@
 #include <iostream>
-#include <vector>
 #include <string>
-#include <memory>
-#include <algorithm>
-#include <cctype>
-#include <locale>
-#include "Player.h"
+#include <vector>
+#include "game/Game.h"
 
 using namespace std;
 
@@ -44,17 +40,9 @@ int main()
         playerNumber += 1;
     }
 
-    for (const string &pName : players)
-    {
-        unique_ptr<Player> ptrNewPlayer(new Player(pName));
-        string introduce = "n";
-        cout << ptrNewPlayer->name + ", would you like to introduce yourself? (y|n): ";
-        cin >> introduce;
-        if (introduce == "y")
-        {
-            ptrNewPlayer->speak("Hi, my name is " + ptrNewPlayer->name);
-        }
-    }
+    // Use automatic memory
+    Game game(players);
+    game.start();
 
     cout << endl;
 
