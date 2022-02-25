@@ -8,7 +8,11 @@ using namespace std;
 class Game
 {
 public:
+    bool running;
     void start();
+    void stop();
+    void play();
+    vector<string> actions = {"speak", "stop"};
     vector<Player> ptrPlayers;
     Game(vector<string> players);
     ~Game();

@@ -9,7 +9,9 @@ class Player
 {
 public:
     string name;
+    vector<string> speeches;
     void speak(string speech);
+    void speakPrompt();
     Player(string pName);
     ~Player();
 };
